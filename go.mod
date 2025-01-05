@@ -3,7 +3,7 @@ module backend
 go 1.23.3
 
 require (
-	github.com/ahmetb/go-linq v2.0.0-rc0+incompatible
+	github.com/ahmetb/go-linq v3.0.0+incompatible
 	github.com/casbin/casbin v1.9.1
 	github.com/coocood/freecache v1.2.4
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible

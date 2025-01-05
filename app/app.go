@@ -26,11 +26,11 @@ func Run(configPath string) {
 	// 初始化数据库
 	db.InitDB(config)
 
-	// 初始化casbin
-	common.InitCsbinEnforcer()
-
 	// 数据库迁移
 	models.Migration()
+
+	// 初始化casbin
+	common.InitCsbinEnforcer()
 
 	// 初始化web服务
 	web.InitWeb(config)

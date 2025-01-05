@@ -2,7 +2,6 @@ package sys
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
 
 	"backend/controllers/common"
@@ -320,13 +319,12 @@ func getSuperAdminMenu() (out []MenuModel) {
 
 // 递归菜单
 func setMenu(menus []sys.Menu, parentID uint64) (out []MenuModel) {
-	fmt.Println("parentID===============================:", parentID)
 	var menuArr []sys.Menu
-	// linq.From(menus).Where(func(c interface{}) bool {
-	// 	return c.(sys.Menu).ParentID == parentID
-	// }).OrderBy(func(c interface{}) interface{} {
-	// 	return c.(sys.Menu).Sequence
-	// }).ToSlice(&menuArr)
+	linq.From(menus).Where(func(c interface{}) bool {
+		return c.(sys.Menu).ParentID == parentID
+	}).OrderBy(func(c interface{}) interface{} {
+		return c.(sys.Menu).Sequence
+	}).ToSlice(&menuArr)
 	if len(menuArr) == 0 {
 		return
 	}
